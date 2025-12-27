@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "dockerhub-username/gitops-demo-app"
+        IMAGE_NAME = "rashmikakashyap/gitops-demo-app"
         IMAGE_TAG  = "${GIT_COMMIT.substring(0,7)}"
     }
 
