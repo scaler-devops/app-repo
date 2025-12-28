@@ -39,6 +39,7 @@ pipeline {
         stage('Update Kubernetes Manifests') {
             steps {
                 sh """
+                git checkout main
                 sed -i 's|image: .*|image: ${IMAGE_NAME}:${IMAGE_TAG}|' manifests/deployment.yaml
                 git config user.email "ci@example.com"
                 git config user.name "Jenkins CI"
